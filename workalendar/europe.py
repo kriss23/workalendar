@@ -444,6 +444,17 @@ class Germany(WesternCalendar, ChristianMixin):
     boxing_day_label = "Second Christmas Day"
 
 
+class GermanyBanking(Germany):
+    "German Bank Holiday Calendar"
+
+    FIXED_HOLIDAYS = Germany.FIXED_HOLIDAYS + (
+        (12, 24, "Christmas Eve"),
+        (12, 31, "New Year's Eve"),
+    )
+
+    include_ascension = False
+
+
 class BadenWurttemberg(Germany):
     "Baden-Württemberg"
 
